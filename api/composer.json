@@ -1,0 +1,16 @@
+{
+  "name": "mok/test",
+  "description": "MOK",
+  "require": {
+    "guzzlehttp/guzzle": "^7.0",
+    "ext-dom": "*",
+    "ext-libxml": "*",
+    "ext-json": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "MOK\\": "src/"
+    },
+    "files": ["src/helpers.php"]
+  }
+}

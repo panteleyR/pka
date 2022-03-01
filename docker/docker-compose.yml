@@ -1,0 +1,19 @@
+version: '3'
+services:
+  web-pd:
+    image: nginx
+    restart: always
+    working_dir: /code
+    ports:
+      - 8081:8081
+    volumes:
+      - ./images/web/conf.d:/etc/nginx/conf.d
+      - ./images/web/logs:/var/logs/nginx
+      - ../api:/code
+    depends_on:
+      - api-pd
+  api-pd:
+    build: ./images/api
+    working_dir: /code
+    volumes:
+      - ../api:/code
